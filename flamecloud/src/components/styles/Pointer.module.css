@@ -1,0 +1,30 @@
+input{
+    padding:6px;
+    border:1px solid grey;
+
+}
+
+#popuppointer{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.popupbuttondiv{
+    display: flex;
+    justify-content: flex-start;
+    gap:5px;
+}
+
+ /* Media query for medium screen size */
+
+ @media screen and (max-width: 768px){
+
+    #popuppointer{
+        width: 450px;
+        height:150px;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+ }

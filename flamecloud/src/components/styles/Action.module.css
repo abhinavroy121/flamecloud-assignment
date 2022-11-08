@@ -1,0 +1,115 @@
+.maincontainer {
+    height: 600px;
+    width: 1200px;   
+background: white;
+margin:auto;
+margin-top:50px;
+}
+#sop{
+    font-family: 'Manrope';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+color: #64748B;
+ margin-left: 130px;
+}
+#title {
+    font-family:Arial, Helvetica, sans-serif;
+font-weight: 700;
+font-size: 32px;
+margin-top:-6px;
+margin-left: -65px;
+}
+
+.actionbuttondiv{
+    display:flex;
+    justify-content:space-around;
+    height:40px;
+}
+
+#actionplanbuttons{
+    display:flex;
+    gap: 0.5em;
+}
+
+.treeview{
+    width:80%;
+    margin:auto;
+    margin-top:30px;
+}
+
+input{
+    padding:6px;
+    border:1px solid grey;
+
+}
+
+#popuppointer{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.treeitem:hover{ 
+    background-color: whitesmoke;
+}
+
+
+
+  /* Media query for medium screen size */
+
+  @media screen and (max-width: 800px){
+    .maincontainer {
+        height: 600px;
+        width: 600px;   
+    background: white;
+    margin:auto;
+    margin-top:10px;
+    text-align:center;
+    }
+    #sop{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #64748B;
+    text-align:center;
+     margin-bottom: 80px;
+     margin-left: -45px;
+    }
+    #title {
+        font-family:Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    margin-top:6px;
+    margin-left: 105px;
+    }
+
+    .actionbuttondiv{
+        width:70%;
+        display:flex;
+        flex-direction: column;
+        justify-content:center;
+      
+    }
+    
+    #actionplanbuttons{
+        width:50%;
+        display:flex;
+        flex-direction: column;
+        gap: 0.5em;
+        text-align:center;
+        margin:auto;
+        margin-left:150px;
+    }
+    .treeview{
+        width:85%;
+        margin:auto;
+        margin-top:100px;
+        margin-left:160px;
+    }
+    .treeitem{
+        width:60%;
+        text-align:start;
+       
+    }
+  }
