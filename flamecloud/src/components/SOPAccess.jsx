@@ -43,6 +43,10 @@ const SOPAccess = ({open3 ,setOpen3, handleaccess}) => {
     const handleClose = () => setOpen(false);
     const [drop1,setdrop1] = useState(true);
 
+    const [salesarr,setsalesarr] = useState([])
+    const [marketingarr,setmarketingarr] = useState([])
+    const [design,setdesign] = useState([])
+
     const [anchorEl, setAnchorEl] = React.useState(null);
     const openmenu = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -51,7 +55,23 @@ const SOPAccess = ({open3 ,setOpen3, handleaccess}) => {
     const handleClosemenu = () => {
       setAnchorEl(null);
     };
-  
+   
+
+    const handleaccessdesign= (item)=>{
+       console.log(item)
+       setsalesarr([...salesarr,item.innerText])
+       setmarketingarr([...marketingarr,item.innerText])
+    //    setdesign([...design,item.innerText])
+       
+    }
+    const handleaccessmarket= (item)=>{
+        // console.log(item)
+        // setsalesarr([...salesarr,item.innerText])
+        // setmarketingarr([...marketingarr,item.innerText])
+        // setdesign([...design,item.innerText])
+        
+     }
+
   return (
     <div>
       
@@ -67,7 +87,7 @@ const SOPAccess = ({open3 ,setOpen3, handleaccess}) => {
             <div>
                 <div>
                     <h3>Sales</h3>
-                    <span><TextField/> <AddIcon  color="secondary" className={styles.icons} aria-controls={openmenu ? 'basic-menu' : undefined}
+                    <span><TextField value={salesarr}/> <AddIcon  color="secondary" className={styles.icons} aria-controls={openmenu ? 'basic-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={openmenu ? 'true' : undefined}
         onClick={handleClick}/> 
@@ -81,8 +101,8 @@ const SOPAccess = ({open3 ,setOpen3, handleaccess}) => {
         }}
       >
        {
-        names.map((item)=>(
-            <MenuItem>{item}</MenuItem>
+        names.map((item,index)=>(
+            <MenuItem key={index}>{item}</MenuItem>
         ))
        }
       </Menu>: <div></div>}
@@ -106,7 +126,7 @@ const SOPAccess = ({open3 ,setOpen3, handleaccess}) => {
       >
        {
         names.map((item)=>(
-            <MenuItem>{item}</MenuItem>
+            <MenuItem onClick={(e)=>handleaccessmarket(e.target)}>{item}</MenuItem>
         ))
        }
       </Menu>: <div></div>}</span>
@@ -128,7 +148,7 @@ const SOPAccess = ({open3 ,setOpen3, handleaccess}) => {
       >
        {
         names.map((item)=>(
-            <MenuItem>{item}</MenuItem>
+            <MenuItem onClick={(e)=>handleaccessdesign(e.target)}>{item}</MenuItem>
         ))
        }
       </Menu>: <div></div>}</span>
