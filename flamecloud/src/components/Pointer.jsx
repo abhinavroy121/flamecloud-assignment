@@ -37,8 +37,8 @@ const Pointer = ({open,setOpen,handlepointerfunction,inputhere,setinputhere}) =>
             </Typography>
             <input
               placeholder="Add Pointer"
-              value={inputhere}
-              onChange={(e) => setinputhere(e.target.value)}
+          
+              onChange={(e) => setinputhere({name:e.target.value,id:Math.random()})}
             />
             <span className={styles.popupbuttondiv}>
               <Button
