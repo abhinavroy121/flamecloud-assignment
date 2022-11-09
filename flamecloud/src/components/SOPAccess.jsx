@@ -7,11 +7,6 @@ import { TextField } from '@mui/material';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
-import { useTheme } from '@mui/material/styles';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 import styles from './styles/SOPAccess.module.css'
 
 
@@ -30,10 +25,10 @@ const style = {
 
 
 const names = [
-  'Oliver Hansen',
-  'Van Henry',
-  'April Tucker',
-  'Ralph Hubbard',
+  'Abhinav',
+  'Rohit',
+  'Pawan',
+  'Ankit',
 
 ];
 
@@ -51,6 +46,7 @@ const SOPAccess = ({open3 ,setOpen3, handleaccess}) => {
     const openmenu = Boolean(anchorEl);
     const handleClick = (event) => {
       setAnchorEl(event.currentTarget);
+      setdrop1(true)
     };
     const handleClosemenu = () => {
       setAnchorEl(null);
@@ -62,6 +58,7 @@ const SOPAccess = ({open3 ,setOpen3, handleaccess}) => {
        setsalesarr([...salesarr,item.innerText])
        setmarketingarr([...marketingarr,item.innerText])
     //    setdesign([...design,item.innerText])
+    setdrop1(false)
        
     }
     const handleaccessmarket= (item)=>{

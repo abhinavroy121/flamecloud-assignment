@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import GroupIcon from "@mui/icons-material/Group";
 import AddIcon from "@mui/icons-material/Add";
 import DragIndicatorIcon from "@mui/icons-material/DragIndicator";
+import DeleteIcon from '@mui/icons-material/Delete';
 import TreeView from "@mui/lab/TreeView";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import TreeItem from "@mui/lab/TreeItem";
@@ -16,8 +17,8 @@ import SOPAccess from "./SOPAccess";
 
 
 const Action = () => {
-  const [pointer, setpointer] = useState([{name:"Pointer 1","id":100},{name:"Pointer 2","id":200}]);       // new Pointer  array inside Marketing
-  const [inputhere, setinputhere] = useState("");                           // input for pointer popup
+  const [pointer, setpointer] = useState([{name:"Pointer 1","id":100},{name:"Pointer 2","id":200}]);          // new Pointer  array inside Marketing
+  const [inputhere, setinputhere] = useState("");                            // input for pointer popup
   const [planinput,setplaninput] = useState("");                            // input for new plan popup
   const [newplan,setnewplan] = useState(['Production'])                   // array for new plan to add in plan
 
@@ -82,18 +83,19 @@ const Action = () => {
             />
             <TreeItem
               className={styles.treeitem}
+             
               nodeId="3"
               label="Google Drive"
             >
               {pointer.map((item, index) => (
-                <TreeItem key={index} className={styles.treeitem} nodeId={toString(index + 20)}   label={item.name} icon={<DragIndicatorIcon />}> 
-                <button onClick={()=>{
+                <TreeItem key={index} className={styles.treeitem} nodeId={toString(index + 20)}   label={item.name}  icon={<DragIndicatorIcon />}> 
+                <DeleteIcon onClick={()=>{
                     console.log("irte",item.id)
                     let newPointer=pointer.filter(each=>each.id!==item.id)
                     setpointer(newPointer)
 
                   }}
-                  > Delete</button>   
+                  > Delete</DeleteIcon>   
                   </TreeItem>
               ))}
        
